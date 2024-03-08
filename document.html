@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documentos</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <body>
+        <nav></nav>
+        
+        <main class="wrapper">
+            <section id="topMain">
+                <div >
+                    <h1>
+                        Documentos
+                    </h1>
+                    <div id="actionBar">
+                        <div id="filterSearch">
+                            <button id="openFilter">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 3H5C4.73478 3 4.48043 3.10536 4.29289 3.29289C4.10536 3.48043 4 3.73478 4 4V6.59C4 7.113 4.213 7.627 4.583 7.997L10 13.414V21C10.0002 21.1704 10.0439 21.3379 10.1269 21.4867C10.2099 21.6354 10.3295 21.7605 10.4744 21.8502C10.6193 21.9398 10.7847 21.9909 10.9549 21.9988C11.1251 22.0066 11.2945 21.9709 11.447 21.895L15.447 19.895C15.786 19.725 16 19.379 16 19V13.414L21.417 7.997C21.787 7.627 22 7.113 22 6.59V4C22 3.73478 21.8946 3.48043 21.7071 3.29289C21.5196 3.10536 21.2652 3 21 3ZM14.293 12.293C14.2 12.3857 14.1262 12.4959 14.0759 12.6172C14.0256 12.7386 13.9998 12.8687 14 13V18.382L12 19.382V13C12.0002 12.8687 11.9744 12.7386 11.9241 12.6172C11.8738 12.4959 11.8 12.3857 11.707 12.293L6 6.59V5H20.001L20.003 6.583L14.293 12.293Z" fill="white"/>
+                                </svg>
+                                <p>Filtro</p>
+                            </button>
+                            <div id="search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                    <path d="M16.6451 14.8549C16.2353 14.4623 15.8365 14.0585 15.449 13.6439C15.1235 13.3131 14.9275 13.0725 14.9275 13.0725L12.4775 11.9026C13.4584 10.7902 13.9997 9.35811 14 7.875C14 4.49837 11.2525 1.75 7.875 1.75C4.4975 1.75 1.75 4.49837 1.75 7.875C1.75 11.2516 4.4975 14 7.875 14C9.41763 14 10.8237 13.4225 11.9026 12.4784L13.0725 14.9284C13.0725 14.9284 13.3131 15.1244 13.6439 15.4499C13.9825 15.7675 14.4279 16.1971 14.8549 16.646L16.0431 17.864L16.5716 18.4292L18.4275 16.5734L17.8622 16.0449C17.5306 15.7194 17.0879 15.2871 16.6451 14.8549ZM7.875 12.25C5.46263 12.25 3.5 10.2874 3.5 7.875C3.5 5.46262 5.46263 3.5 7.875 3.5C10.2874 3.5 12.25 5.46262 12.25 7.875C12.25 10.2874 10.2874 12.25 7.875 12.25Z" fill="black"/>
+                                </svg>
+                                <input name="q" type="search" class="search-txt" placeholder="Buscar">
+                            </div>
+                        </div>
+                        <button id="openSendDocumentModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M11 15H13V9H16L12 4L8 9H11V15Z" fill="white"/>
+                                <path d="M20 18H4V11H2V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V11H20V18Z" fill="white"/>
+                            </svg>
+                            <p>Enviar Documento</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div id="backgroundFade" class="hide">
+                    <div id="modal" class="hide">
+                        <header>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M11 15H13V9H16L12 4L8 9H11V15Z" fill="white"/>
+                                <path d="M20 18H4V11H2V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V11H20V18Z" fill="white"/>
+                              </svg>
+                            <h3>Enviar</h3>
+                        </div>
+                        <button id="closeSendDocumentModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M17.9572 5.70712C17.5667 5.31658 16.9336 5.31655 16.543 5.70703L12.7065 9.54297C12.316 9.93345 11.6828 9.93342 11.2923 9.54288L7.45698 5.7072C7.06645 5.31663 6.43324 5.31663 6.04271 5.7072L5.70701 6.04292C5.31653 6.43344 5.31653 7.06656 5.70701 7.45708L9.54252 11.2929C9.933 11.6834 9.933 12.3166 9.54252 12.7071L5.70701 16.5429C5.31653 16.9334 5.31653 17.5666 5.70701 17.9571L6.04271 18.2928C6.43324 18.6834 7.06645 18.6834 7.45698 18.2928L11.2923 14.4571C11.6828 14.0666 12.316 14.0665 12.7065 14.457L16.543 18.293C16.9336 18.6835 17.5667 18.6834 17.9572 18.2929L18.293 17.9571C18.6835 17.5666 18.6835 16.9334 18.293 16.5429L14.4575 12.7071C14.067 12.3166 14.067 11.6834 14.4575 11.2929L18.293 7.45708C18.6835 7.06656 18.6835 6.43344 18.293 6.04292L17.9572 5.70712Z" fill="white"/>
+                              </svg>
+                        </button>
+                        </header>
+                        <div class="wrapper">
+                            <form id="sendDocument" action="">
+                                <div>
+                                    <label for="sendDocumentSubject">Assunto<span>*</span></label>
+                                    <input type="text" class="inputAndSelect" name="sendDocumentSubject" id="sendDocumentSubject" placeholder="Digite aqui...">
+                                    <span id="errorSendDocumentSubject" class="hide">Favor, preencha o campo acima</span>
+                                </div>
+                                <div id="grid">
+                                    <div id="firstRowLeft">
+                                        <label for="sendDocumentFolder">Pasta<span>*</span></label>
+                                        <select name="sendDocumentFolder" id="sendDocumentFolder" class="inputAndSelect">
+                                            <option value="0">Selecione uma Opção...</option>
+                                            <option value="1">Teste 1</option>
+                                            <option value="2">Teste 2</option>
+                                        </select>
+                                        <span id="errorSendDocumentFolder" class="hide">Favor, preencha o campo acima</span>
+                                    </div>
+                                    <div id="firstRowRight">
+                                        <label for="sendDocumentCollaborator">Colaborador<span>*</span></label>
+                                        <select name="sendDocumentCollaborator" id="sendDocumentCollaborator" class="inputAndSelect">
+                                            <option value="0">Selecione um Colaborador...</option>
+                                            <option value="1">Todos</option>
+                                            <option value="2">Teste</option>
+                                        </select>
+                                        <span id="errorSendDocumentCollaborator" class="hide">Favor, preencha o campo acima</span>
+                                    </div>
+                                    <div id="secondRowLeft">
+                                        <label for="sendDocumentType">Tipo<span>*</span></label>
+                                        <select name="sendDocumentType" id="sendDocumentType" class="inputAndSelect">
+                                            <option value="0">Selecione um Tipo...</option>
+                                            <option value="1">Teste 1</option>
+                                            <option value="2">Teste 2</option>
+                                        </select>
+                                        <span id="errorSendDocumentType" class="hide">Favor, preencha o campo acima</span>
+                                    </div>
+                                    <div id="secondRowRight">
+                                        <label for="sendDocumentLimit">Prazo</label>
+                                    <input type="date" name="sedDocumentLimit" id="sendDocumentLimit" class="inputAndSelect">
+                                    </div>
+                                </div>
+                                <label for="sendDocumentComplementaryInformation">Informações Complementares</label>
+                                <textarea name="sendDocumentComplementaryInformation" id="sendDocumentComplementaryInformation" placeholder="Digite Aqui..." class="inputAndSelect" ></textarea>
+                                <div class="complementaryArea">
+                                    <p>O colaborador precisa responder?<span>*</span></p>
+                                    <input type="radio" name="sendDocumentReply" id="noReply" value="0" checked>
+                                    <label for="noReply">Não</label>
+                                    <input type="radio" name="sendDocumentReply" id="needReply" value="1">
+                                    <label for="needReply">Sim</label>
+                                </div>
+                                <label for="sendDocumentFile">Arquivo</label>
+                                <div class="fileArea">
+                                    <input type="file" name="sendDocumentFile" id="sendDocumentFile">
+                                </div>
+                                <div id="sendDocumentLastLine">
+                                    <p><span>Campos Obrigatórios*</span></p>
+                                    <button type="button" id="sendDocumentButton">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11 15H13V9H16L12 4L8 9H11V15Z" fill="white"/>
+                                            <path d="M20 18H4V11H2V18C2 19.103 2.897 20 4 20H20C21.103 20 22 19.103 22 18V11H20V18Z" fill="white"/>
+                                        </svg>
+                                        <p>Enviar</p>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="Documents">
+                <div>
+                    <img src="./Assets/pasta.png" alt="">
+                    <div class="documents">
+                        <div id="table">
+                            <table>
+                                <thead>
+                                    <tr class="header">
+                                        <th class="folder">Pasta</th>
+                                        <th class="sender">Remetente</th>
+                                        <th class="subject">Assunto</th>
+                                        <th class="receiver">Destinatário</th>
+                                        <th class="limit">Prazo</th>
+                                        <th class="type">Tipo</th>
+                                        <th class="status">Status</th>
+                                        <th class="receive">Recebido em</th>
+                                        <th class="file">Arquivo</th>
+                                        <th class="actions">Ações</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr class="row">
+                                            <td class="folder">Pasta</td>
+                                            <td class="sender">Remetente</td>
+                                            <td class="subject">Assunto</td>
+                                            <td class="receiver">Destinatário</td>
+                                            <td class="limit">Prazo</td>
+                                            <td class="type">Tipo</td>
+                                            <td class="status">Status</td>
+                                            <td class="receive">Recebido em</td>
+                                            <td class="file">Arquivo</td>
+                                            <td class="actions">Ações</td>
+                                        </tr>
+                                        <tr class="row">
+                                            <td class="folder">Pasta</td>
+                                            <td class="sender">Remetente</td>
+                                            <td class="subject">Assunto</td>
+                                            <td class="receiver">Destinatário</td>
+                                            <td class="limit">Prazo</td>
+                                            <td class="type">Tipo</td>
+                                            <td class="status">Status</td>
+                                            <td class="receive">Recebido em</td>
+                                            <td class="file">Arquivo</td>
+                                            <td class="actions">Ações</td>
+                                        </tr>
+                                        <tr class="row">
+                                            <td class="folder">Pasta</td>
+                                            <td class="sender">Remetente</td>
+                                            <td class="subject">Assunto</td>
+                                            <td class="receiver">Destinatário</td>
+                                            <td class="limit">Prazo</td>
+                                            <td class="type">Tipo</td>
+                                            <td class="status">Status</td>
+                                            <td class="receive">Recebido em</td>
+                                            <td class="file">Arquivo</td>
+                                            <td class="actions">Ações</td>
+                                        </tr>
+                                    </tbody>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="legend">
+                            <p>Legendas:</p>
+                            <div>
+                                <div class="circle done"></div>
+                                <p>Concluído</p>  
+                            </div>
+                            <div>
+                                <div class="circle answered"></div>
+                                <p>Respondido</p>  
+                            </div>
+                            <div>
+                                <div class="circle pending"></div>
+                                <p>Pendente</p>  
+                            </div>
+                        </div>
+                        <div id="pagination">
+
+                        </div>
+                </div>
+            </section>
+            <section id="filter" class="filter hide">
+                <header>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                        <path d="M18.375 2.625H4.375C4.14294 2.625 3.92038 2.71719 3.75628 2.88128C3.59219 3.04538 3.5 3.26794 3.5 3.5V5.76625C3.5 6.22388 3.68638 6.67363 4.01013 6.99738L8.75 11.7372V18.375C8.75017 18.5241 8.78839 18.6706 8.86104 18.8008C8.93368 18.931 9.03835 19.0405 9.16514 19.1189C9.29192 19.1973 9.43662 19.2421 9.58554 19.2489C9.73446 19.2558 9.88266 19.2245 10.0161 19.1581L13.5161 17.4081C13.8127 17.2594 14 16.9566 14 16.625V11.7372L18.7399 6.99738C19.0636 6.67363 19.25 6.22388 19.25 5.76625V3.5C19.25 3.26794 19.1578 3.04538 18.9937 2.88128C18.8296 2.71719 18.6071 2.625 18.375 2.625ZM12.5064 10.7564C12.425 10.8375 12.3604 10.9339 12.3164 11.0401C12.2724 11.1463 12.2498 11.2601 12.25 11.375V16.0842L10.5 16.9592V11.375C10.5002 11.2601 10.4776 11.1463 10.4336 11.0401C10.3896 10.9339 10.325 10.8375 10.2436 10.7564L5.25 5.76625V4.375H17.5009L17.5026 5.76013L12.5064 10.7564Z" fill="white"/>
+                    </svg>
+                    <h3>Filtro</h3>
+                    </div>
+                    <button id="closeFilter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.9572 5.70712C17.5667 5.31658 16.9336 5.31655 16.543 5.70703L12.7065 9.54297C12.316 9.93345 11.6828 9.93342 11.2923 9.54288L7.45698 5.7072C7.06645 5.31663 6.43324 5.31663 6.04271 5.7072L5.70701 6.04292C5.31653 6.43344 5.31653 7.06656 5.70701 7.45708L9.54252 11.2929C9.933 11.6834 9.933 12.3166 9.54252 12.7071L5.70701 16.5429C5.31653 16.9334 5.31653 17.5666 5.70701 17.9571L6.04271 18.2928C6.43324 18.6834 7.06645 18.6834 7.45698 18.2928L11.2923 14.4571C11.6828 14.0666 12.316 14.0665 12.7065 14.457L16.543 18.293C16.9336 18.6835 17.5667 18.6834 17.9572 18.2929L18.293 17.9571C18.6835 17.5666 18.6835 16.9334 18.293 16.5429L14.4575 12.7071C14.067 12.3166 14.067 11.6834 14.4575 11.2929L18.293 7.45708C18.6835 7.06656 18.6835 6.43344 18.293 6.04292L17.9572 5.70712Z" fill="white"/>
+                        </svg>
+                    </button>
+                </header>
+                <form action="" class="wrapper">
+                    <div>
+                        <label for="folder">Pasta</label>
+                        <select name="folder" id="folder" class="inputAndSelect"></select>
+                    </div>
+                    <div>
+                        <label for="sender">Remetente</label>
+                        <select name="sender" id="sender" class="inputAndSelect"></select>
+                    </div>
+                    <div>
+                        <label for="receiver">Destinatário</label>
+                        <select name="receiver" id="receiver" class="inputAndSelect"></select>
+                    </div>
+                    <div>
+                        <label for="limit">Prazo</label>
+                        <input type="date" name="limit" id="limit" class="inputAndSelect"></input>
+                    </div>
+                    <div>
+                        <label for="type">Tipo</label>
+                        <select name="type" id="type" class="inputAndSelect"></select>
+                    </div>
+                    <div>
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="inputAndSelect"></select>
+                    </div>
+                    <div>
+                        <label for="receive">Recebido em</label>
+                        <input type="date" name="receive" id="receive" class="inputAndSelect"></input>
+                    </div>
+                    <div class="filterButton">
+                        <button type="reset" id="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                <path d="M14.25 6.33413H12.6666V6.33334H11.875V3.95755C11.8776 3.64718 11.8177 3.33946 11.6988 3.05274C11.5799 2.76603 11.4045 2.50618 11.183 2.28872C10.9399 2.03844 10.6436 1.84598 10.3162 1.72554C9.98868 1.60509 9.63832 1.55974 9.29096 1.59284C8.07654 1.69734 7.12496 2.77717 7.12496 4.05097V6.33334H4.74996C3.87675 6.33334 3.16663 7.04347 3.16663 7.91667V16.625C3.16663 16.835 3.25003 17.0363 3.3985 17.1848C3.54697 17.3333 3.74833 17.4167 3.95829 17.4167H15.0416C15.2516 17.4167 15.453 17.3333 15.6014 17.1848C15.7499 17.0363 15.8333 16.835 15.8333 16.625V7.91747C15.8333 7.04426 15.1232 6.33413 14.25 6.33413ZM4.74996 9.50001V7.91667H8.70829V4.05097C8.70829 3.59972 9.0305 3.20388 9.50154 3.16667C9.71213 3.16667 9.90688 3.24822 10.0652 3.40972C10.1379 3.4811 10.1954 3.56641 10.2343 3.66054C10.2732 3.75468 10.2927 3.8557 10.2916 3.95755V7.91667H11.0793L11.0833 7.91747H14.25V9.50001H4.74996Z" fill="white"/>
+                            </svg>
+                            Limpar</button>
+                        <button type="submit" id="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                <path d="M15.0599 13.4401C14.6891 13.0849 14.3283 12.7196 13.9777 12.3444C13.6832 12.0452 13.5059 11.8275 13.5059 11.8275L11.2892 10.769C12.1767 9.76252 12.6664 8.46685 12.6667 7.12498C12.6667 4.06994 10.1809 1.58331 7.12504 1.58331C4.06921 1.58331 1.58337 4.06994 1.58337 7.12498C1.58337 10.18 4.06921 12.6666 7.12504 12.6666C8.52075 12.6666 9.79296 12.1441 10.7691 11.2899L11.8275 13.5066C11.8275 13.5066 12.0452 13.6839 12.3445 13.9784C12.6509 14.2658 13.0538 14.6545 13.4402 15.0606L14.5152 16.1626L14.9934 16.6741L16.6725 14.9949L16.1611 14.5168C15.8611 14.2223 15.4605 13.8312 15.0599 13.4401ZM7.12504 11.0833C4.94242 11.0833 3.16671 9.3076 3.16671 7.12498C3.16671 4.94235 4.94242 3.16665 7.12504 3.16665C9.30767 3.16665 11.0834 4.94235 11.0834 7.12498C11.0834 9.3076 9.30767 11.0833 7.12504 11.0833Z" fill="white"/>
+                            </svg>
+                            Filtrar
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <div id="alert" class="alert danger hide">
+                <h1>Erro ao enviar!</h1>
+                <p>Favor, preencha os campos assinalados como obrigatórios e tente novamente.</p>
+            </div>
+        </main>
+        
+        <footer/>
+        <script src="scripts/main.js"></script>
+    </head>
+    </body>
+</html>
